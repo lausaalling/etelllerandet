@@ -5,3 +5,4 @@ og vi kommer til at savne det
 det i vi sikre på.
 I morgen skal vi have DDU hele dagen.
 AAAAAAAAAAAAAAAAAAAA
+jeg er ikke ok
