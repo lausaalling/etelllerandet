@@ -7,3 +7,4 @@ I morgen skal vi have DDU hele dagen.
 AAAAAAAAAAAAAAAAAAAA
 jeg er ikke ok
 wjdoiasifhuehdush HHAHAHAHA
+Halløj igen
