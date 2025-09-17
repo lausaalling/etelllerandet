@@ -13,4 +13,12 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 echo "Connected successfully";
+
+
+function addbruger($email, $password, $name){
+    $sql = "INSERT INTO Brugere (`Email`, `Password`, `Name`) VALUES ('$email','$password','$name')";
+
+    $GLOBALS['conn']-> query($sql);
+}
+
 ?>
