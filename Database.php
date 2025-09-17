@@ -34,6 +34,31 @@ function checkname($name){
         $userExist = true;
     }
     return $userExist;
-    
 }
+
+function PostSnak($name, $title, $content, $tags, $film){
+    $time = date("Y/m/d") . ":" . date("H:i");
+    $sql = "INSERT INTO `Snak`(`name`, `time`, `title`, `content`, `tags`, `film`, `likes`) VALUES ('$name','$time','$title','$content','$tags','$film', 1)";
+
+    $GLOBALS['conn']-> query($sql);
+    echo "SHITTET ER POSTET";
+}
+
+function PostForslag($name, $title, $content){
+    $time = date("Y/m/d") . ":" . date("H:i");
+    $sql = "INSERT INTO `Forslag`(`name`, `time`, `title`, `content`, `likes`) VALUES ('$name','$time','$title','$content', 1)";
+
+    $GLOBALS['conn']-> query($sql);
+    echo "SHITTET ER POSTET2";
+}
+
+function Postanmeld($name, $title, $content, $tags, $film){
+    $time = date("Y/m/d") . ":" . date("H:i");
+    $sql = "INSERT INTO `Anmeld`(`name`, `time`, `title`, `content`, `tags`, `film`, `likes`) VALUES ('$name','$time','$title','$content','$tags','$film', 1)";
+
+    $GLOBALS['conn']-> query($sql);
+    echo "SHITTET ER POSTET3";
+}
+
+
 ?>
