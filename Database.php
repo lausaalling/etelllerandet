@@ -17,8 +17,23 @@ echo "Connected successfully";
 
 function addbruger($email, $password, $name){
     $sql = "INSERT INTO Brugere (`Email`, `Password`, `Name`) VALUES ('$email','$password','$name')";
-
-    $GLOBALS['conn']-> query($sql);
+    $userExist = checkname($name);
+    if ($userExist == false){
+        $GLOBALS['conn']-> query($sql);
+    }else{
+        echo "user eksistere allerede din bums";
+    }
 }
 
+
+function checkname($name){
+    $sql = "SELECT `Email`, `Password`, `Name` FROM Brugere WHERE name='$name'";
+    $result = $GLOBALS['conn'] -> query($sql);
+    $userExist = false;
+    if ($result->num_rows > 0) {
+        $userExist = true;
+    }
+    return $userExist;
+    
+}
 ?>
