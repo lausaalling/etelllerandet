@@ -60,5 +60,96 @@ function Postanmeld($name, $title, $content, $tags, $film){
     echo "SHITTET ER POSTET3";
 }
 
+function updateLikeSnak($id){
+    $sql1 = "SELECT `likes` FROM `Snak` WHERE ID = $id";
+    $result = $GLOBALS['conn'] -> query($sql1);
+    $row = $result->fetch_array(MYSQLI_NUM);
+    print_r($row);;
+    $quantity = $row[0];
 
+    $nyLike = $quantity + 1;
+
+    $sql = "UPDATE Snak SET likes=$nyLike WHERE id=$id";
+    $GLOBALS['conn']-> query($sql);
+    echo "update nibba" . $nyLike;
+}
+function unUpdateLikeSnak($id){
+    $sql1 = "SELECT `likes` FROM `Snak` WHERE ID = $id";
+    $result = $GLOBALS['conn'] -> query($sql1);
+    $row = $result->fetch_array(MYSQLI_NUM);
+    print_r($row);;
+    $quantity = $row[0];
+
+    $nyLike = $quantity - 1;
+
+    $sql = "UPDATE Snak SET likes=$nyLike WHERE id=$id";
+    $GLOBALS['conn']-> query($sql);
+    echo "update nibba" . $nyLike;
+}
+
+function updateLikeAnmeld($id){
+    $sql1 = "SELECT `likes` FROM `Anmeld` WHERE ID = $id";
+    $result = $GLOBALS['conn'] -> query($sql1);
+    $row = $result->fetch_array(MYSQLI_NUM);
+    print_r($row);;
+    $quantity = $row[0];
+
+    $nyLike = $quantity + 1;
+
+    $sql = "UPDATE Anmeld SET likes=$nyLike WHERE id=$id";
+    $GLOBALS['conn']-> query($sql);
+    echo "update nibba" . $nyLike;
+}
+function unUpdateLikeAnmeld($id){
+    $sql1 = "SELECT `likes` FROM `Anmeld` WHERE ID = $id";
+    $result = $GLOBALS['conn'] -> query($sql1);
+    $row = $result->fetch_array(MYSQLI_NUM);
+    print_r($row);;
+    $quantity = $row[0];
+
+    $nyLike = $quantity - 1;
+
+    $sql = "UPDATE Anmeld SET likes=$nyLike WHERE id=$id";
+    $GLOBALS['conn']-> query($sql);
+    echo "update nibba" . $nyLike;
+}
+
+function updateLikeForslag($id){
+    $sql1 = "SELECT `likes` FROM `Forslag` WHERE ID = $id";
+    $result = $GLOBALS['conn'] -> query($sql1);
+    $row = $result->fetch_array(MYSQLI_NUM);
+    print_r($row);;
+    $quantity = $row[0];
+
+    $nyLike = $quantity + 1;
+
+    $sql = "UPDATE Forslag SET likes=$nyLike WHERE id=$id";
+    $GLOBALS['conn']-> query($sql);
+    echo "update nibba" . $nyLike;
+}
+function unUpdateLikeForslag($id){
+    $sql1 = "SELECT `likes` FROM `Forslag` WHERE ID = $id";
+    $result = $GLOBALS['conn'] -> query($sql1);
+    $row = $result->fetch_array(MYSQLI_NUM);
+    print_r($row);;
+    $quantity = $row[0];
+
+    $nyLike = $quantity - 1;
+
+    $sql = "UPDATE Forslag SET likes=$nyLike WHERE id=$id";
+    $GLOBALS['conn']-> query($sql);
+    echo "update nibba" . $nyLike;
+}
+
+
+function CLEARALT(){
+    $sql = "DELETE FROM Brugere";
+    $sql1 = "DELETE FROM Snak";
+    $sql2 = "DELETE FROM Forslag";
+    $sql3 = "DELETE FROM Anmeld";
+    $GLOBALS['conn']-> query($sql);
+    $GLOBALS['conn']-> query($sql1);
+    $GLOBALS['conn']-> query($sql2);
+    $GLOBALS['conn']-> query($sql3);
+}
 ?>

@@ -9,3 +9,5 @@ post snak ved brug af "PostSnak("navn", "titel", "indhold", "tags", "film");"
 post forslag ved brug af "PostSnak("navn", "titel", "indhold");"
 
 post anmeld ved brug af "PostSnak("navn", "titel", "indhold", "tags", "film");"
+
+opdater likkes ved brug af "UpdateLikeSnak("id");" og "unUpdateLikeSnak(55);"
